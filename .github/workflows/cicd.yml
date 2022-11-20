@@ -31,7 +31,7 @@ jobs:
         
   deploy:
    name: deploy
-   needs: build
+   needs: Build
    runs-on: ubuntu-latest
    steps:
     - name: downloading artifacts
@@ -41,7 +41,7 @@ jobs:
        path: ./build
     - name: Deploy to github pages
       uses: crazy.max/ghaction-github-pages@v3
-       with:
+      with:
         target_branch: gh-pages
         build_dir: ./build
   stale:
